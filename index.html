@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intercargo Transportes</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
+
+<head>
+</head>
+<link rel="stylesheet" href="https://cdn-prod.securiti.ai/consent/cookie-consent.css">
+</head>
+<!-- Política de Gestão de Cookies -->
+<link rel="stylesheet" type="text/css" href="https://cdn-prod.securiti.ai/consent/cookie-consent.css" />
+<script src="https://cdn-prod.securiti.ai/consent/cookie-consent-sdk.js"
+  data-tenant-uuid="69002a11-6be0-4a3b-8715-8601675d5925" data-domain-uuid="211a7832-9df7-4cd6-955d-48cd92b6fa56"
+  data-backend-url="https://app.securiti.ai" defer></script>
+
+<script async src="https://script.hotjar.com/modules.0721e7cf944cf9d78a0b.js" charset="utf-8"></script>
+
+<!-- Google Tag Manager (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8SJSXFWH2T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-8SJSXFWH2T'); 
+</script>
+
+<script>
+  (function () {
+    var s = document.createElement('script');
+    s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk.js';
+    s.setAttribute('data-tenant-uuid', '69002a11-6be0-4a3b-8715-8601675d5925');
+    s.setAttribute('data-domain-uuid', '211a7832-9df7-4cd6-955d-48cd92b6fa56');
+    s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+    s.defer = true;
+    var parent_node = document.head || document.body;
+    parent_node.appendChild(s);
+    s.addEventListener('load', function () {
+      window.initCmp();
+    });
+  })();
+</script>
+
+
+<script>
+  document.getElementById('subject').addEventListener('change', function () {
+    var quotationFields = document.getElementById('quotation-fields');
+    if (this.value === 'Cotação') {
+      quotationFields.classList.remove('hidden');
+      document.getElementById('submit-btn').textContent = 'Enviar Cotação';
+    } else {
+      quotationFields.classList.add('hidden');
+      document.getElementById('submit-btn').textContent = 'Fale com um especialista';
+    }
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var subject = document.getElementById('subject').value;
+    var email;
+
+    // Destinatário
+    switch (subject) {
+      case 'Financeiro':
+        email = 'financeiro@intercargo.com.br';
+        break;
+      case 'Coleta São Paulo':
+        email = 'coletasp@intercargo.com.br';
+        break;
+      case 'Coleta Joinville':
+        email = 'coletajv@intercargo.com.br';
+        break;
+      case 'SAC Joinville':
+        email = 'sac@intercargo.com.br';
+        break;
+      case 'SAC São Paulo':
+        email = 'sacsp@intercargo.com.br';
+        break;
+      case 'Ouvidoria':
+        email = 'ouvidoria@intercargo.com.br';
+        break;
+      case 'Cotação':
+        email = 'comercial01.jvl@intercargotransportes.com.br';
+        break;
+    }
+
+    //  lógica para enviar o e-mail
+    console.log('Email enviado para:', email);
+  });
+
+</script>
+
+<script>
+  export default {
+    data() {
+      return {
+        currentPage: 'home', // Página padrão
+      };
+    },
+    methods: {
+      goTo(page) {
+        this.currentPage = page;
+      },
+    },
+  };
+</script>
